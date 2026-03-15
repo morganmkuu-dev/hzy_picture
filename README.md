@@ -6,7 +6,7 @@
 ## 🛠️ 技术栈
 * **核心框架:** Spring Boot
 * **数据访问:** MyBatis-Plus (或 MyBatis)
-* **数据库:** MySQL
+* **数据库:** MySQL、Redis
 * **构建及依赖管理:** Maven
 * **版本控制:** Git
 
