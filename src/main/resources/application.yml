@@ -9,42 +9,6 @@ server:
 spring:
   application:
     name: hzy-picture-backend
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/hzy_picture?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
-
-  # ✨ 修复1：直接使用 shardingsphere 接管数据源，与 application 同级
-#  shardingsphere:
-#    datasource:
-#      # ✨ 修复2：名字必须上下一致
-#      names: hzy_picture
-#      hzy_picture:
-#        type: com.zaxxer.hikari.HikariDataSource
-#        driver-class-name: com.mysql.cj.jdbc.Driver
-#        # ✨ 修复3：使用 jdbc-url，并补充基础参数防止乱码/时区报错
-#        jdbc-url: jdbc:mysql://localhost:3306/hzy_picture?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Guangzhou
-#        username: root
-#        password: 123456
-#    rules:
-#      sharding:
-#        tables:
-#          picture:
-#            actual-data-nodes: hzy_picture.picture  # 动态分表
-#            table-strategy:
-#              standard:
-#                sharding-column: spaceId
-#                sharding-algorithm-name: picture_sharding_algorithm  # 使用自定义分片算法
-#        sharding-algorithms:
-#          picture_sharding_algorithm:
-#            type: CLASS_BASED
-#            props:
-#              strategy: standard
-#              algorithmClassName: com.hzy.hzypicturebackend.manager.sharding.PictureShardingAlgorithm
-#    props:
-#      sql-show: true
-
 
   # Redis 配置
   redis:
